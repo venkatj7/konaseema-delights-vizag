@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konaseema Delights - Food Business Menu</title>
+    <style>
+        html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures the background covers the full height of the page */
+    background-image: url('images/konaseema.jpg'); /* Replace 'your-image.jpg' with your image path */
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling/repeating of the image */
+    font-family: Arial, sans-serif; /* Optional: Sets a default font style */
+}
+
+        .addnote{
+          color: blue;
+        }
+        body {
+        
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefefe;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+         
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            background-color: #FFB30E;
+        }
+        header img {
+            height: 80px;
+        }
+        header h1 {
+            font-family: sans-serif;
+            font-size: 35px;
+            color: #491bb3;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .menu {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .category {
+            margin-bottom: 20px;
+        }
+        .category h2 {
+            background-color: #c15b20;
+            color: #ffffff;
+            padding: 10px;
+            cursor: pointer;
+            margin: 0;
+            border-radius: 4px;
+        }
+        .items {
+            display: none;
+            padding: 10px;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .item img {
+            width: 150px;
+            height: 120px;
+            border-radius: 4px;
+            margin-right: 20px;
+            background-color: #ddd;
+        }
+        .item-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .item-info p {
+            margin: 2px 0;
+        }
+        .note {
+            font-size: 12px;
+            color: #666;
+        }
+        footer {
+            background-color: #FFB30E;
+            color: #ffffff;
+            text-align: center;
+            padding: 1px 0;   
+            width: 100%;
+            bottom: 0;
+        }
+        
+    </style>
+    <script>
+        function toggleCategory(category) {
+
+            // Get all categories
+        const categories = document.querySelectorAll('.items');
+        
+        // Loop through categories to close any that are open
+        categories.forEach((item) => {
+            if (item.id !== category) {
+                item.style.display = 'none';
+            }
+        });
+
+            const items = document.getElementById(category);
+            items.style.display = items.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <img src="images/Lakshmi_ganapathi.png" alt="Left Logo">
+    <h1>Konaseema Delights</h1>
+    <img src="images/Durgamatha.jpg" alt="Right Logo">
+</header>
+
+
+<div class="menu">
+    <!-- Ghee Category -->
+    <div class="category">
+        <h2 onclick="toggleCategory('ghee')">Ghee</h2>
+        <div class="items" id="ghee">
+            <div class="item">
+                <img src="images/ghee.jpg" alt="Laddu">
+                <div class="item-info">
+                    <p><strong>Buffalo Ghee</strong></p>
+                    <p class="note">Homemade Pure Buffalo Ghee</p>
+                    <p>Qty: 500 gms - 650 Rs</p>   
+                    <p>Qty: 1 kg - 1200 Rs</p>					
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/cowghee.jpeg" alt="Laddu">
+                <div class="item-info">
+                    <p><strong>Cow Ghee</strong></p>
+                    <p class="note">Made with pure cow's milk for rich taste and goodness!</p>
+                    <p>Qty: 500 gms - 1000 Rs</p>   
+                    <p>Qty: 1 kg - 1950 Rs</p>					
+                </div>
+            </div>
+        </div>		
+    </div>   
+	<!-- Sweets Category -->
+    <div class="category">
+        <h2 onclick="toggleCategory('sweets')">Sweets</h2>
+        <div class="items" id="sweets">
+            <div class="item">
+                <img src="images/bellamladdu.jpeg" alt="Laddu">
+                <div class="item-info">
+                    <p><strong>Laddu (Jaggery)</strong></p>
+                    <p class="note">Sweetened with natural jaggery</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 15 rs</p>					
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/boondiladdu.jpg" alt="Laddu">
+                <div class="item-info">
+                    <p><strong>Laddu (Sugar)</strong></p>
+                    <p class="note">Sweetened with Sugar</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 15 rs</p>					
+                </div>
+            </div>            
+            <div class="item">
+                <img src="images/sunnunda.webp" alt="Sunnundalu">
+                <div class="item-info">
+                    <p><strong>Sunnundalu (Jaggery)</strong></p>
+                    <p class="note">Sweetened with jaggery, rich in minerals</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 20 rs</p>                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/bobbattu.jpeg" alt="Bobbatlu">
+                <div class="item-info">
+                    <p><strong>Bobbatlu</strong></p>
+                    <p class="note">Prepared with pure ghee for rich flavor</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 25 rs</p>                  
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/kajjikayalu.jpg" alt="Kajjikayalu">
+                <div class="item-info">
+                    <p><strong>Kajjikayalu</strong></p>
+                    <p class="note">A traditional sweet recipe</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 15 rs</p>                   
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/ariselu.jpg" alt="Ghee Ariselu">
+                <div class="item-info">
+                    <p><strong>Ghee Ariselu</strong></p>
+                    <p class="note">Infused with pure ghee</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 20 rs</p>                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/bellam_gavvalu.jpg" alt="Bellam Gavvalu">
+                <div class="item-info">
+                    <p><strong>Bellam Gavvalu</strong></p>
+                    <p class="note">Sweetened with authentic jaggery</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 400 rs</p>                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chikki.jpeg" alt="Bellam Gavvalu">
+                <div class="item-info">
+                    <p><strong>Groundnut chikki</strong></p>
+                    <p class="note">Crunchy groundnut chikki with jaggery</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 450 rs</p>                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/ravvaladdu.jpeg" alt="Bellam Gavvalu">
+                <div class="item-info">
+                    <p><strong>Ravva Laddu</strong></p>
+                    <p class="note">Ravva laddu sweetened with sugar</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 10 rs</p>                   
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/gulabipuvvulu.jpeg" alt="Bellam Gavvalu">
+                <div class="item-info">
+                    <p><strong>Gulabi Puvvulu</strong></p>
+                    <p class="note">Gulabi puvvulu sweetened with jaggery</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 10 rs</p>                   
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/boorelu.jpeg" alt="Bellam Gavvalu">
+                <div class="item-info">
+                    <p><strong>Boorelu</strong></p>
+                    <p class="note">Boorelu prepared with jaggery</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 12 rs</p>                   
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/coconutladdu.jpeg" alt="Bellam Gavvalu">
+                <div class="item-info">
+                    <p><strong>Coconut Laddu</strong></p>
+                    <p class="note">Coconut undalu sweetened with jaggery</p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 10 rs</p>                   
+                </div>
+            </div>
+            <!-- Add remaining sweets items -->
+        </div>
+    </div>
+    <!-- Thokku Category-->
+
+    <div class="category">
+        <h2 onclick="toggleCategory('thokku')">Tokku/Paste</h2>
+        <div class="items" id="thokku">
+            <div class="item">
+                <img src="images/pandumirchithokku.jpeg" alt="Avakaya">
+                <div class="item-info">
+                    <p><strong>Pandu Mirchi Thokku</strong></p>
+                    <p class="note">Made with red chilies for a spicy and flavorful punch</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chinthatokku.jpeg" alt="Pandu Mirchi">
+                <div class="item-info">
+                    <p><strong>Chinta Thokku</strong></p>
+                    <p class="note">Made with fresh raw chintakaya for a naturally tangy delight!</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Pickles Category -->
+    <div class="category">
+        <h2 onclick="toggleCategory('pickles')">Pickles</h2>
+        <div class="items" id="pickles">
+            <div class="item">
+                <img src="images/avakaya.webp" alt="Avakaya">
+                <div class="item-info">
+                    <p><strong>Avakaya</strong></p>
+                    <p class="note">Spicy traditional mango pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 700 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/bellamavakaya.jpg" alt="Bellam Avakaya">
+                <div class="item-info">
+                    <p><strong>Bellam Avakaya</strong></p>
+                    <p class="note">Sweet and tangy mango pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 700 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/dosaavakaya.jpeg" alt="Dosa Avakaya">
+                <div class="item-info">
+                    <p><strong>Dosa Avakaya</strong></p>
+                    <p class="note">Savory pickle made with yellow cucumber and red chilli. </p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/gongura.jpeg" alt="Gongura">
+                <div class="item-info">
+                    <p><strong>Gongura</strong></p>
+                    <p class="note">Tangy gongura leaves pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/tomato.jpeg" alt="Tomato">
+                <div class="item-info">
+                    <p><strong>Tomato</strong></p>
+                    <p class="note">Zesty tomato pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chintakaya.jpg" alt="Chintakaya">
+                <div class="item-info">
+                    <p><strong>Chintakaya</strong></p>
+                    <p class="note">Spicy chintakaya pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/pandumirchi.jpeg" alt="Pandu Mirchi">
+                <div class="item-info">
+                    <p><strong>Pandu Mirchi</strong></p>
+                    <p class="note">Fiery red chili pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+			<div class="item">
+                <img src="images/allam.jpeg" alt="Allam">
+                <div class="item-info">
+                    <p><strong>Allam</strong></p>
+                    <p class="note">Tangy ginger pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Usirikaya.jpeg" alt="Usirikaya">
+                <div class="item-info">
+                    <p><strong>Usirikaya</strong></p>
+                    <p class="note">Spicy usirikaya (Amla) pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Nimmakaya.jpeg" alt="Nimmakaya">
+                <div class="item-info">
+                    <p><strong>Nimmakaya</strong></p>
+                    <p class="note">Made with lemons for a zesty and tangy delight!</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/magaya.jpeg" alt="Magaya">
+                <div class="item-info">
+                    <p><strong>Magaya</strong></p>
+                    <p class="note">Magaya-style spicy pickle</p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                </div>
+            </div>
+            <!-- Add remaining pickles items -->
+        </div>
+    </div>
+   
+
+    <!-- Powders Category -->
+    <div class="category">
+        <h2 onclick="toggleCategory('powders')">Powders</h2>
+        <div class="items" id="powders">
+            <div class="item">
+                <img src="images/kandipodi.jpeg" alt="Kandi Podi">
+                <div class="item-info">
+                    <p><strong>Kandi Podi</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                    <p class="note">Spicy Kandi Podi with aromatic spices</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/nuvvulapodi.jpg" alt="Nuvvula Podi">
+                <div class="item-info">
+                    <p><strong>Nuvvula Podi</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                    <p class="note">Flavorful Nuvvula Podi with sesame seeds</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/karivepakupodi.jpg" alt="Karivepaku Podi">
+                <div class="item-info">
+                    <p><strong>Karivepaku Podi</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Fragrant Karivepaku (curry leaves) Podi</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/koorakaram.jpeg" alt="Koora Karam">
+                <div class="item-info">
+                    <p><strong>Koora Karam</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Traditional Koora Karam spice mix</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/sambarpodi.jpg" alt="Sambar Powder">
+                <div class="item-info">
+                    <p><strong>Sambar Powder</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Authentic Sambar spice powder</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/rasampodi.jpg" alt="Rasam Powder">
+                <div class="item-info">
+                    <p><strong>Rasam Powder</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Tangy Rasam spice powder</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/idlykaram.jpg" alt="Rasam Powder">
+                <div class="item-info">
+                    <p><strong>Idly Karam</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Spicy powder for idly</p>
+                </div>
+            </div>
+			<div class="item">
+                <img src="images/kobbaripodi.jpeg" alt="Rasam Powder">
+                <div class="item-info">
+                    <p><strong>Coconut Powder</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Made with freshly dried coconuts for rich aroma and taste</p>
+                </div>
+            </div>
+			<div class="item">
+                <img src="images/annampodi.jpeg" alt="Rasam Powder">
+                <div class="item-info">
+                    <p><strong>Pappula Podi</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                    <p class="note">Made with roasted gram for a crunchy, nutty flavor—perfect to mix with rice</p>
+                </div>
+            </div>
+			<div class="item">
+                <img src="images/putnalapodi.jpg" alt="Rasam Powder">
+                <div class="item-info">
+                    <p><strong>Putnala Podi</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Made with fine roasted gram for a smooth and tasty mix</p>
+                </div>
+            </div>
+			<div class="item">
+                <img src="images/peanutpowder.jpeg" alt="Rasam Powder">
+                <div class="item-info">
+                    <p><strong>Peanut Powder</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Made with roasted peanuts for a rich and nutty flavor—perfect for rice and more</p>
+                </div>
+            </div>
+            <!-- Add remaining powders items -->
+        </div>
+    </div>
+
+    <!-- Snacks Category -->
+    <div class="category">
+        <h2 onclick="toggleCategory('snacks')">Snacks</h2>
+        <div class="items" id="snacks">
+            <div class="item">
+                <img src="images/janthikalau.jpeg" alt="Janthikalu">
+                <div class="item-info">
+                    <p><strong>Janthikalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Crunchy Janthikalu snacks</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chekkilalu.jpeg" alt="Janthikalu">
+                <div class="item-info">
+                    <p><strong>Chekkilalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 750 rs</p>
+                    <p class="note">Crunchy butter made chekkialu</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chekkalu.jpg" alt="Chekkalu">
+                <div class="item-info">
+                    <p><strong>Chekkalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Deliciously crispy Chekkalu</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/karapupoosa.jpeg" alt="Karapu Poosa">
+                <div class="item-info">
+                    <p><strong>Karapu Poosa</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Spicy Karapu Poosa snacks</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/karapuboondi.jpg" alt="Boondi Mixture">
+                <div class="item-info">
+                    <p><strong>Plain Boondi</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 400 rs</p>
+                    <p class="note">Light and crispy plain Boondi</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/boondimixture.jpg" alt="Boondi Mixture">
+                <div class="item-info">
+                    <p><strong>Boondi Mixture</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Savory Boondi mixture snacks</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chekodilu.jpg" alt="Chekodilu">
+                <div class="item-info">
+                    <p><strong>Chekodilu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 600 rs</p>
+                    <p class="note">Flavored Chekodilu with spices</p>
+                </div>
+            </div>
+            <!-- Add remaining snacks items -->
+        </div>
+    </div>
+
+    <!-- Vadiyalu Category -->
+    <div class="category">
+        <h2 onclick="toggleCategory('vadiyalu')">Papads/Vadiyalu</h2>
+        <div class="items" id="vadiyalu">
+            <div class="item">
+                <img src="images/ricepapad.jpg" alt="Pindi Vadiyalu">
+                <div class="item-info">
+                    <p><strong>Aviri Appadalu/Rice Papad</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 300 rs</p>
+                    <p class="note">Rice papad prepared using steam.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/pindi_vadiyalu.jpeg" alt="Pindi Vadiyalu">
+                <div class="item-info">
+                    <p><strong>Pindi Vadiyalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 400 rs</p>
+                    <p class="note">Traditional Pindi Vadiyalu, sun-dried and crispy</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/saggubiyyam.jpg" alt="Saggubiyyam Vadiyalu">
+                <div class="item-info">
+                    <p><strong>Saggu Biyyam Vadiyalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Saggu Biyyam Vadiyalu, crispy sun-dried snacks</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/chittivadiyalu.jpg" alt="Minapa Vadiyalu">
+                <div class="item-info">
+                    <p><strong>Minapa Vadiyalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Minapa Vadiyalu, crispy and flavorful</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/challamirapakayalu.jpg" alt="Minapa Vadiyalu">
+                <div class="item-info">
+                    <p><strong>Majjiga Mirapakayalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 500 rs</p>
+                    <p class="note">Majjiga Mirapakayalu, crispy and spicy</p>
+                </div>
+            </div>            
+            <div class="item">
+                <img src="images/ravva_vadiyalu.jpeg" alt="Gummadi Vadiyalu">
+                <div class="item-info">
+                    <p><strong>Ravva Vadiyalu</strong></p>
+                    <p>Qty: 1 kg</p>   
+                    <p>Price: 400 rs</p>
+                    <p class="note">Made with Ravva</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/gummadivadiyalu.jpg" alt="Gummadi Vadiyalu">
+                <div class="item-info">
+                    <p><strong>Gummadi Vadiyalu</strong></p>
+                    <p>Qty: 1 pc</p>   
+                    <p>Price: 10 rs</p>
+                    <p class="note">Gummadi Vadiyalu, crispy and tangy</p>
+                </div>
+            </div>
+            <!-- Add remaining vadiyalu items -->
+        </div>
+    </div>
+<p class="addnote">We use only the finest ingredients and prepare all dishes fresh on an order basis, ensuring hygiene at all stages of preparation.
+    <b color="red">Minimun order. 250 gms</b></p>
+</div>
+<footer>
+    <p>&copy; 2025 Konaseema Delights. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
